@@ -5,7 +5,7 @@
 
 require_once ("classes/RequestHandler.class.php");
 require_once ("tenpay_config.php");
-
+//tianjiazhushi
 /* 获取提交的订单号 en*/
 $out_trade_no = $_REQUEST["order_no"];
 /* 获取提交的商品名称 */
