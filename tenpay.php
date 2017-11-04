@@ -6,7 +6,7 @@
 require_once ("classes/RequestHandler.class.php");
 require_once ("tenpay_config.php");
 
-/* 获取提交的订单号 */
+/* 获取提交的订单号 en*/
 $out_trade_no = $_REQUEST["order_no"];
 /* 获取提交的商品名称 */
 $product_name = $_REQUEST["product_name"];
@@ -33,7 +33,7 @@ $reqHandler->setKey($key);
 $reqHandler->setGateUrl("https://gw.tenpay.com/gateway/pay.htm");
 
 //----------------------------------------
-//设置支付参数 
+//设置支付参数
 //----------------------------------------
 $reqHandler->setParameter("partner", $partner);
 $reqHandler->setParameter("out_trade_no", $out_trade_no);
@@ -99,4 +99,3 @@ foreach($params as $k => $v) {
 </form>
 </body>
 </html>
-
