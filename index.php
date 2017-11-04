@@ -1,30 +1,31 @@
 <?php
+//这是一个入口模板
    require_once ("classes/RequestHandler.class.php");
    require_once ("tenpay_config.php");
   $curDateTime = date("YmdHis");
- 
-  
+
+
   //date_default_timezone_set(PRC);
 		$strDate = date("Ymd");
 		$strTime = date("His");
-		
+
 		//4位随机数
 		$randNum = rand(1000, 9999);
-		
+
 		//10位序列号,可以自行调整。
 		$strReq = $strTime . $randNum;
 		 /* 商家的定单号 */
   	$mch_vno = $curDateTime . $randNum;
 ?>
- 
+
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <HTML><HEAD><TITLE>财付通付款通道</TITLE>
 <META http-equiv=Content-Type content="text/html; charset=utf-8">
-<META 
-content=网上购物/网上支付/安全支付/安全购物/购物，安全/支付,安全/财付通/安全,支付/安全，购物/支付,在线/付款,收款/网上,贸易/网上贸易. 
+<META
+content=网上购物/网上支付/安全支付/安全购物/购物，安全/支付,安全/财付通/安全,支付/安全，购物/支付,在线/付款,收款/网上,贸易/网上贸易.
 name=description>
-<META 
-content=网上购物/网上支付/安全支付/安全购物/购物，安全/支付,安全/财付通/安全,支付/安全，购物/支付,在线/付款,收款/网上,贸易/网上贸易. 
+<META
+content=网上购物/网上支付/安全支付/安全购物/购物，安全/支付,安全/财付通/安全,支付/安全，购物/支付,在线/付款,收款/网上,贸易/网上贸易.
 name=keywords>
 <META content="MSHTML 6.00.3790.2577" name=GENERATOR>
 
@@ -60,9 +61,9 @@ a:hover {
   <table width="760" border="0" align="center" cellpadding="0" cellspacing="0">
     <tr>
       <td width="381" align="left" valign="middle"><a href="https://www.tenpay.com/" target="_blank"><img src="image/logo.jpg" width="537" height="145" border="0"></a></td>
-      <td width="379" align="right" valign="middle" font style="color:#000000;font-size:12px;">您好，请 <A 
-      href="https://www.tenpay.com/" target="_blank">注册</A> 或 <A 
-      href="https://www.tenpay.com/" target="_blank">登录</A> | <A 
+      <td width="379" align="right" valign="middle" font style="color:#000000;font-size:12px;">您好，请 <A
+      href="https://www.tenpay.com/" target="_blank">注册</A> 或 <A
+      href="https://www.tenpay.com/" target="_blank">登录</A> | <A
       href="https://www.tenpay.com/" target="_blank">财付通首页</A></td>
     </tr>
   </table>
@@ -111,7 +112,7 @@ a:hover {
 			directFrm.order_price.focus();
 			return false;
 		}
-		
+
 		if (directFrm.remarkexplain.value=="")
 		{
 			alert("提醒：请填写您的简要说明！");
@@ -121,10 +122,10 @@ a:hover {
 		if (directFrm.remarkexplain.value.length>31)
 		{
 			alert("提醒：超出规定的字数,请重新输入");
-  			event.returnValue=false;   
-  			return   false;   
+  			event.returnValue=false;
+  			return   false;
 		}
-		
+
 		return true;
 	}
   </script>
@@ -153,13 +154,13 @@ a:hover {
                             <tr>
                               <td height="24" font style="color:#000000;font-size:12px;">请务必确认好订单和货款后，再付款。可以在快速付款通道里的“付款概要”和“订单金额”中填入相应的订单信息。</td>
                               </tr>
-                            
+
                           </table></td>
                         </tr>
                         <tr>
                         <td width="102" height="26" align="right" valign="top">收款方：</td>
                         <td width="353" valign="top"><? echo  $spname ?></td>
-                        </tr> 
+                        </tr>
                       <tr>
                         <td align="right" valign="top">订单编号：</td>
                         <td valign="top">
@@ -173,7 +174,7 @@ a:hover {
                       </tr>
                       <tr>
                         <td align="right" valign="top">付款金额：</td>
-                        <td valign="top"><input type="text" name="order_price" maxlength="50" size="18" onKeyUp="if(isNaN(value))execCommand('undo')" onafterpaste="if(isNaN(value))execCommand('undo')" font style="color:#000000;font-size:14px;"> 
+                        <td valign="top"><input type="text" name="order_price" maxlength="50" size="18" onKeyUp="if(isNaN(value))execCommand('undo')" onafterpaste="if(isNaN(value))execCommand('undo')" font style="color:#000000;font-size:14px;">
                         元（格式：500.01）</td>
                       </tr>
                        <tr>
@@ -211,27 +212,27 @@ a:hover {
 <TABLE width=760 border=0 cellPadding=0 cellSpacing=4 class="px12">
   <TBODY>
   <TR>
-    <TD width="71" rowSpan=2 align="center" noWrap bgcolor="#CCCCCC" class=box-note><FONT 
+    <TD width="71" rowSpan=2 align="center" noWrap bgcolor="#CCCCCC" class=box-note><FONT
       class=note-help>支持<FONT class=note-help>银行 </FONT></FONT></TD>
     <TD width="14" rowSpan=2></TD>
-    <TD width="120"><IMG alt=中国工商银行 
+    <TD width="120"><IMG alt=中国工商银行
       src="image/icon_zggsyh_s.gif" border=0> </TD>
     <TD width="142"><IMG alt=中国建设银行 src="image/icon_ccb_s.gif" border=0> </TD>
-    <TD width="108"><IMG alt=上海浦东发展银行 src="image/icon_spdb_s.gif" 
+    <TD width="108"><IMG alt=上海浦东发展银行 src="image/icon_spdb_s.gif"
       border=0> </TD>
     <TD width="142"><IMG alt=招商银行 src="image/icon_zsyh_s.gif" border=0>    </TD>
-    <TD width="141"><IMG alt=中国民生银行 src="image/icon_cmbc_s.gif" 
+    <TD width="141"><IMG alt=中国民生银行 src="image/icon_cmbc_s.gif"
       border=0></TD>
   </TR>
   <TR>
     <TD>
-      <DIV align=left><IMG alt=中国农业银行 
+      <DIV align=left><IMG alt=中国农业银行
       src="image/icon_abc_s.gif" border=0> </DIV></TD>
     <TD><IMG alt=广东发展银行 src="image/icon_gdb_s.gif" border=0> </TD>
-    <TD><IMG alt=兴业银行 src="image/index_38.gif" 
+    <TD><IMG alt=兴业银行 src="image/index_38.gif"
       border=0> </TD>
     <TD>
-      <DIV align=left><IMG alt=深圳发展银行 
+      <DIV align=left><IMG alt=深圳发展银行
       src="image/icon_sdb_s.gif" border=0> </DIV></TD>
   <TD><IMG alt=VISA src="image/icon_visa_s.gif" border=0> </TD>
   </TR></TBODY></TABLE></div><HR width=760 SIZE=1>
@@ -239,18 +240,18 @@ a:hover {
 <TABLE width=760 border=0 align="center" cellSpacing=1 class="px12hui">
   <TBODY>
   <TR>
-    <TD>如果您点击“确认”按钮，即表示您已经接受“财付通服务协议”，同意向卖家购买 此物品。 
-      <BR>您有责任查阅完整的物品登录资料，包括卖家的说明和接受的付款方式。卖家必须承担物品信息正确登录的 责任！ 
+    <TD>如果您点击“确认”按钮，即表示您已经接受“财付通服务协议”，同意向卖家购买 此物品。
+      <BR>您有责任查阅完整的物品登录资料，包括卖家的说明和接受的付款方式。卖家必须承担物品信息正确登录的 责任！
 </FONT></TD>
   </TR></TBODY></TABLE></CENTER>
 <TABLE width=760 border=0 align=center cellPadding=0 cellSpacing=0 class="px12">
   <TBODY>
   <TR align=middle>
-    <TD class="txt12 lh15"><div align="center"><A href="http://www.tencent.com/" 
+    <TD class="txt12 lh15"><div align="center"><A href="http://www.tencent.com/"
       target=_blank>腾讯旗下公司</A> | 财付通 版权所有 2008 </div></TD></TR>
   <TR align=middle>
-    <TD class="txt12 lh15"><div align="center"><IMG alt="财付通通过“国际权威安全认证” " 
+    <TD class="txt12 lh15"><div align="center"><IMG alt="财付通通过“国际权威安全认证” "
       src="image/logo_vbvv.gif" border=0><BR>
-      财付通通过“国际权威安全 
+      财付通通过“国际权威安全
       认证”</div></TD></TR></TBODY></TABLE></CENTER></body>
 </html>
